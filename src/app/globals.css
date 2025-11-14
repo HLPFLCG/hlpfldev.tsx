@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #c87941;
+  --primary-light: #e09560;
+  --accent: #2c5f6f;
+  --dark: #0a0a0a;
+  --dark-light: #1a1a1a;
+  --text: #ffffff;
+  --text-muted: #a0a0a0;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-dark text-text overflow-x-hidden leading-relaxed;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+@layer components {
+  /* Loading Screen */
+  .loading-screen {
+    @apply fixed inset-0 bg-gradient-to-br from-dark to-dark-light flex flex-col items-center justify-center z-[10000] transition-all duration-800 ease-in-out;
+  }
+
+  .loading-screen.hidden {
+    @apply opacity-0 invisible;
+  }
+
+  .loading-logo {
+    @apply w-[400px] h-auto mb-16;
+    animation: logoFloat 3s ease-in-out infinite, logoPulse 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(200, 121, 65, 0.5));
+  }
+
+  .loading-bar-container {
+    @apply w-[400px] h-1.5 bg-white/10 rounded-full overflow-hidden mb-4;
+  }
+
+  .loading-bar {
+    @apply h-full bg-gradient-to-r from-primary to-primary-light rounded-full transition-all duration-300 ease-in-out;
+  }
+
+  .loading-percentage {
+    @apply text-2xl text-primary font-semibold;
+  }
+
+  /* Header */
+  .header {
+    @apply fixed top-0 left-0 right-0 z-[1000] px-8 py-6 transition-all duration-300 ease-in-out;
+  }
+
+  .header.scrolled {
+    @apply bg-dark/95 backdrop-blur-md shadow-lg;
+  }
+
+  .nav-links {
+    @apply flex gap-12 list-none;
+  }
+
+  .nav-links a {
+    @apply text-text font-medium transition-colors duration-300 ease-in-out text-lg no-underline hover:text-primary;
+  }
+
+  .cta-button {
+    @apply bg-gradient-to-r from-primary to-primary-light text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 ease-in-out border-0 cursor-pointer text-base no-underline;
+  }
+
+  .cta-button:hover {
+    @apply -translate-y-0.5 shadow-2xl;
+    box-shadow: 0 10px 30px rgba(200, 121, 65, 0.4);
+  }
+
+  .secondary-button {
+    @apply bg-transparent text-text px-8 py-3.5 rounded-full font-semibold transition-all duration-300 ease-in-out border-2 border-primary no-underline;
+  }
+
+  .secondary-button:hover {
+    @apply bg-primary -translate-y-0.5;
+  }
+
+  /* Value Cards */
+  .value-card {
+    @apply bg-dark-light p-10 rounded-2xl border border-primary/20 transition-all duration-300 ease-in-out;
+  }
+
+  .value-card:hover {
+    @apply -translate-y-2.5 shadow-2xl border-primary;
+    box-shadow: 0 20px 40px rgba(200, 121, 65, 0.2);
+  }
+
+  /* Testimonial Cards */
+  .testimonial-card {
+    @apply bg-dark-light p-10 rounded-2xl border border-primary/20 transition-all duration-300 ease-in-out;
+  }
+
+  .testimonial-card:hover {
+    @apply -translate-y-1.5 shadow-xl;
+    box-shadow: 0 15px 30px rgba(200, 121, 65, 0.2);
+  }
+
+  /* Pricing Cards */
+  .pricing-card {
+    @apply bg-dark-light px-10 py-12 rounded-2xl border border-primary/20 transition-all duration-300 ease-in-out text-center;
+  }
+
+  .pricing-card.featured {
+    @apply border-2 border-primary scale-105 shadow-2xl;
+    box-shadow: 0 20px 40px rgba(200, 121, 65, 0.3);
+  }
+
+  .pricing-card:hover {
+    @apply -translate-y-2.5 scale-102 shadow-2xl;
+    box-shadow: 0 20px 40px rgba(200, 121, 65, 0.2);
+  }
+
+  /* FAQ Items */
+  .faq-item {
+    @apply bg-dark-light mb-4 rounded-xl border border-primary/20 overflow-hidden transition-all duration-300 ease-in-out;
+  }
+
+  .faq-item:hover {
+    @apply border-primary;
+  }
+
+  .faq-question {
+    @apply px-8 py-6 cursor-pointer flex justify-between items-center font-semibold text-lg transition-all duration-300 ease-in-out;
+  }
+
+  .faq-question:hover {
+    @apply text-primary;
+  }
+
+  .faq-answer {
+    @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+  }
+
+  .faq-answer-content {
+    @apply px-8 pb-6 text-text-muted leading-relaxed;
+  }
+
+  .faq-item.active .faq-answer {
+    @apply max-h-96;
+  }
+
+  /* Footer */
+  .footer-section h3 {
+    @apply text-primary mb-6 text-xl;
+  }
+
+  .footer-section a {
+    @apply text-text-muted no-underline transition-all duration-300 ease-in-out inline-block;
+  }
+
+  .footer-section a:hover {
+    @apply text-primary translate-x-1.5;
+  }
+
+  /* Reveal Animation */
+  .reveal {
+    @apply opacity-0 translate-y-12 transition-all duration-800 ease-in-out;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes logoFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes logoPulse {
+    0%, 100% { filter: drop-shadow(0 0 30px rgba(200, 121, 65, 0.5)); }
+    50% { filter: drop-shadow(0 0 50px rgba(200, 121, 65, 0.8)); }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      @apply opacity-0 translate-y-8;
+    }
+    to {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      @apply opacity-0 -translate-x-12;
+    }
+    to {
+      @apply opacity-100 translate-x-0;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      @apply translate-y-0;
+    }
+    50% {
+      @apply -translate-y-2.5;
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.5s ease forwards;
+  }
+
+  .animate-bounce {
+    animation: bounce 0.6s ease;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    @apply hidden;
+  }
+
+  .mobile-menu-toggle {
+    @apply block;
+  }
+
+  .loading-logo {
+    @apply w-[250px];
+  }
+
+  .loading-bar-container {
+    @apply w-[250px];
+  }
+
+  .pricing-card.featured {
+    @apply scale-100;
+  }
+}
+
+/* Performance Optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GPU acceleration for animations */
+.value-card,
+.testimonial-card,
+.pricing-card,
+.cta-button {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
