@@ -40,7 +40,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ## 🏗️ Project Structure
 
 ```
-websiteportfolio-typescript/
+hlpfldev.tsx/
 ├── src/
 │   ├── app/                    # Next.js app directory
 │   │   ├── layout.tsx         # Root layout with SEO and metadata
@@ -128,6 +128,12 @@ npm start
 npm run export
 ```
 
+### Cloudflare Deployment
+
+```bash
+npm run deploy:cloudflare
+```
+
 ## 🧪 Development
 
 ### Available Scripts
@@ -138,7 +144,15 @@ npm run build        # Build for production
 npm start            # Start production server
 npm run lint         # Run ESLint
 npm run export       # Export static files
+npm run deploy:cloudflare # Deploy to Cloudflare Pages
 ```
+
+### Code Quality
+
+- TypeScript for type safety
+- ESLint for code quality
+- Tailwind CSS for utility-first styling
+- Component-based architecture
 
 ## 📱 Browser Support
 
@@ -169,7 +183,7 @@ This project was converted from static HTML/CSS/JavaScript to modern TypeScript/
 - No TypeScript
 - Manual responsive design
 
-### After (websiteportfolio-typescript)
+### After (hlpfldev.tsx)
 - Next.js 16 with React 19
 - TypeScript for type safety
 - Tailwind CSS for styling
@@ -188,9 +202,19 @@ This project was converted from static HTML/CSS/JavaScript to modern TypeScript/
 6. **SEO Enhancement**: Basic meta tags → Advanced metadata & structured data
 7. **Performance**: Manual optimization → Automated optimizations
 
-## 📄 Documentation
+## 🚀 Live Deployment
 
-See the `todo.md` file for detailed information about the conversion process and completed tasks.
+This project is successfully deployed and accessible at:
+- **GitHub Repository**: https://github.com/HLPFLCG/hlpfldev.tsx
+- **Development Preview**: Available via local development server
+
+## 📄 Recent Updates
+
+### Latest Commit: `Update dependencies to match converted TypeScript project`
+- Updated package.json with React 19, Next.js 16, and TypeScript dependencies
+- Added Cloudflare deployment script
+- Synced with modern web development stack
+- All components converted to TypeScript with proper typing
 
 ## 🤝 Contributing
 
@@ -207,6 +231,7 @@ For questions about this conversion or the code structure, refer to:
 
 **Version**: 1.0 - TypeScript Conversion Complete  
 **Last Updated**: November 2024  
-**Status**: Production Ready
+**Status**: Production Ready  
+**Repository**: https://github.com/HLPFLCG/hlpfldev.tsx
 
 Built with ❤️ using Next.js 16, React 19, TypeScript, and Tailwind CSS
