@@ -34,7 +34,11 @@ export default function Loading() {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute bg-gradient-to-r from-primary to-primary-light rounded-full opacity-80"
+            className="absolute rounded-full opacity-60"
+              style={{
+                ...style,
+                background: 'var(--primary)',
+              }}
             style={{
               width: Math.random() * 6 + 2 + 'px',
               height: Math.random() * 6 + 2 + 'px',
