@@ -30,7 +30,8 @@
 @layer components {
   /* Loading Screen */
   .loading-screen {
-    @apply fixed inset-0 bg-gradient-to-br from-dark to-dark-light flex flex-col items-center justify-center z-[10000] transition-all duration-700 ease-in-out;
+    @apply fixed inset-0 flex flex-col items-center justify-center z-[10000] transition-all duration-800 ease-in-out;
+       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   }
 
   .loading-screen.hidden {
