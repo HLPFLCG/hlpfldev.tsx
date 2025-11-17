@@ -11,8 +11,8 @@ import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
 
 export default function Home() {
-  const [reveals, setReveals] = useState<NodeListOf<Element>>([]);
-  const [faqItems, setFaqItems] = useState<NodeListOf<Element>>([]);
+  const [reveals, setReveals] = useState<NodeListOf<Element> | null>(null);
+  const [faqItems, setFaqItems] = useState<NodeListOf<Element> | null>(null);
 
   useEffect(() => {
     // Initialize reveal animations
@@ -40,6 +40,7 @@ export default function Home() {
   }, []);
 
   const toggleFaq = (index: number) => {
+    if (!faqItems) return;
     const item = faqItems[index];
     if (item) {
       const isActive = item.classList.contains('active');
