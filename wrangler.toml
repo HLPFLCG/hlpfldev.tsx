@@ -1,0 +1,11 @@
+name = "hlpfldev-tsx"
+compatibility_date = "2024-11-17"
+
+[env.production]
+name = "hlpfldev-tsx"
+routes = [
+  { pattern = "hlpfldev-tsx.pages.dev/*", zone_name = "hlpfldev-tsx.pages.dev" }
+]
+
+[env.preview]
+name = "hlpfldev-tsx-preview"
