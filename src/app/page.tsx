@@ -67,8 +67,13 @@ export default function Home() {
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
-            className="particle absolute w-1 h-1 bg-primary rounded-full opacity-30"
+            className="particle absolute"
             style={{
+              width: '4px',
+              height: '4px',
+              background: 'var(--primary)',
+              borderRadius: '50%',
+              opacity: '0.3',
               left: Math.random() * 100 + '%',
               top: Math.random() * 100 + '%',
               animation: `float ${Math.random() * 10 + 15}s infinite ease-in-out`,
