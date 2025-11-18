@@ -8,13 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="footer-brand flex flex-col">
-            <div className="footer-logo mb-4">
+            <div className="footer-logo mb-4 flex justify-center">
               <Image 
                 src="/hlpfl-logo-full.svg" 
                 alt="HLPFL - Web Development" 
                 width={160}
                 height={64}
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity max-w-[150px] h-auto"
               />
             </div>
             <h3 className="text-primary mb-4 text-xl">HLPFL</h3>

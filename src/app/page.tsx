@@ -121,7 +121,7 @@ export default function Home() {
       <div className="trust-badges bg-dark-light py-8 border-t border-primary/20 border-b border-primary/20">
         <div className="trust-badges-container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon mb-2">
+            <div className="trust-badge-icon mb-2 flex justify-center">
               <Image 
                 src="/hlpfl-symbol.svg"
                 alt="72-Hour Delivery"
@@ -134,7 +134,7 @@ export default function Home() {
             <p className="text-text-muted text-sm">Efficient turnaround guaranteed</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon mb-2">
+            <div className="trust-badge-icon mb-2 flex justify-center">
               <Image 
                 src="/hlpfl-symbol.svg"
                 alt="Founder Friendly Pricing"
@@ -147,7 +147,7 @@ export default function Home() {
             <p className="text-text-muted text-sm">Sliding scale for your budget</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon mb-2">
+            <div className="trust-badge-icon mb-2 flex justify-center">
               <Image 
                 src="/hlpfl-symbol.svg"
                 alt="100% US-Based"
@@ -160,7 +160,7 @@ export default function Home() {
             <p className="text-text-muted text-sm">No international outsourcing - ever</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon mb-2">
+            <div className="trust-badge-icon mb-2 flex justify-center">
               <Image 
                 src="/hlpfl-symbol.svg"
                 alt="Full Transparency"
@@ -173,7 +173,7 @@ export default function Home() {
             <p className="text-text-muted text-sm">No hidden fees or surprises</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon mb-2">
+            <div className="trust-badge-icon mb-2 flex justify-center">
               <Image 
                 src="/hlpfl-symbol.svg"
                 alt="Real Partnership"
@@ -201,7 +201,7 @@ export default function Home() {
           </div>
           <div className="value-props grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="value-card reveal">
-              <div className="value-icon mb-4">
+              <div className="value-icon mb-4 flex justify-center">
                 <Image 
                   src="/hlpfl-symbol.svg"
                   alt="Lightning Fast Delivery"
@@ -216,7 +216,7 @@ export default function Home() {
               </p>
             </div>
             <div className="value-card reveal">
-              <div className="value-icon mb-4">
+              <div className="value-icon mb-4 flex justify-center">
                 <Image 
                   src="/hlpfl-symbol.svg"
                   alt="Actually Affordable"
@@ -231,7 +231,7 @@ export default function Home() {
               </p>
             </div>
             <div className="value-card reveal">
-              <div className="value-icon mb-4">
+              <div className="value-icon mb-4 flex justify-center">
                 <Image 
                   src="/hlpfl-symbol.svg"
                   alt="US-Based Work"
