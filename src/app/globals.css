@@ -313,3 +313,14 @@
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+/* Ensure content appears above starfield */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Page content wrapper */
+.page-content {
+  position: relative;
+  z-index: 1;
+}

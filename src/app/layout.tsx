@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Loading from "@/components/Loading";
 import PopupCTA from "@/components/PopupCTA";
+import Starfield from "@/components/Starfield";
+import { LoadingProvider } from "@/contexts/LoadingContext";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -117,9 +120,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} antialiased`}>
-        <Loading />
-        {children}
-        <PopupCTA />
+        <LoadingProvider>
+          <Starfield />
+          <Loading />
+          <PageTransition>
+            {children}
+          </PageTransition>
+          <PopupCTA />
+        </LoadingProvider>
       </body>
     </html>
   );
