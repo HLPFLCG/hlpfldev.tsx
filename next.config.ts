@@ -6,7 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  distDir: 'out'
+  distDir: 'out',
+  basePath: '/hlpfldev.tsx',
+  assetPrefix: '/hlpfldev.tsx/'
 };
 
 export default nextConfig;
