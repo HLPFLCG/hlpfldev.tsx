@@ -66,7 +66,7 @@
   }
 
   .nav-links {
-    @apply flex gap-12 list-none;
+    @apply flex gap-6 lg:gap-12 list-none;
   }
 
   .nav-links a {
@@ -74,7 +74,7 @@
   }
 
   .cta-button {
-    @apply bg-gradient-to-r from-primary to-primary-light text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 ease-in-out border-0 cursor-pointer text-base no-underline;
+    @apply bg-gradient-to-r from-primary to-primary-light text-white px-6 py-2.5 lg:px-8 lg:py-3.5 rounded-full font-semibold transition-all duration-300 ease-in-out border-0 cursor-pointer text-sm lg:text-base no-underline;
   }
 
   .cta-button:hover {
@@ -83,11 +83,11 @@
   }
 
   .secondary-button {
-    @apply bg-transparent text-text px-8 py-3.5 rounded-full font-semibold transition-all duration-300 ease-in-out border-2 border-primary no-underline;
+    @apply bg-transparent text-text px-6 py-2.5 lg:px-8 lg:py-3.5 rounded-full font-semibold transition-all duration-300 ease-in-out border-2 border-primary no-underline text-sm lg:text-base;
   }
 
   .secondary-button:hover {
-    @apply bg-primary -translate-y-0.5;
+    @apply bg-primary -translate-y-0.5 text-white;
   }
 
   /* Value Cards */
@@ -253,6 +253,36 @@
 
   .pricing-card.featured {
     @apply scale-100;
+  }
+
+  .hero-content {
+    @apply px-4;
+  }
+
+  .trust-badges-container {
+    @apply grid-cols-1;
+  }
+
+  .value-props {
+    @apply grid-cols-1;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    @apply text-4xl;
+  }
+
+  .hero p {
+    @apply text-lg;
+  }
+
+  .section-header h2 {
+    @apply text-3xl;
+  }
+
+  .cta-button, .secondary-button {
+    @apply w-full text-center py-3;
   }
 }
 

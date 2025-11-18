@@ -54,9 +54,9 @@ export default function Loading() {
           <Image 
             src="/hlpfl-logo-full.svg"
             alt="HLPFL - Web Development"
-            width={200}
-            height={80}
-            className="animate-pulse hover:scale-105 transition-transform duration-300"
+            width={240}
+            height={96}
+            className="animate-pulse hover:scale-105 transition-transform duration-300 max-w-[90vw] h-auto"
           />
         </div>
 

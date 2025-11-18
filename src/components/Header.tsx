@@ -27,7 +27,8 @@ export default function Header() {
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <nav className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 lg:h-20">
         {/* Logo */}
         <Link href="/" className="logo hover:animate-bounce">
           <Image 
@@ -60,7 +61,8 @@ export default function Header() {
         >
           {isMobileMenuOpen ? '✕' : '☰'}
         </button>
-      </nav>
+      </div>
+        </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (

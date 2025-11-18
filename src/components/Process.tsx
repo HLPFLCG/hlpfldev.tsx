@@ -70,7 +70,7 @@ export default function Process() {
               className={`value-card reveal ${isVisible ? 'active' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="value-icon mb-4">
+              <div className="value-icon mb-4 flex justify-center">
                    <Image 
                      src={step.icon}
                      alt={step.title}
