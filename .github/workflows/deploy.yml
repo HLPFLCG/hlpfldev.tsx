@@ -26,9 +26,16 @@ jobs:
     - name: Build project
       run: npm run build
       
+    - name: Create Cloudflare Pages project
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        command: pages project create hlpfldev --production-branch main || true
+    
     - name: Deploy to Cloudflare Pages
       uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        command: pages deploy out --project-name=hlpfldev --commit-hash=${{ github.sha }}
+        command: pages deploy out --project-name=hlpfldev --commit-hash=${{ github.sha }} --commit-dirty=true
