@@ -31,7 +31,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="logo hover:animate-bounce">
           <Image 
-            src="/hlpfl-logo-full.svg" 
+            src="/hlpfl-symbol.svg" 
             alt="HLPFL - Web Development" 
             width={180}
             height={72}
