@@ -1,25 +1,26 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const processSteps = [
   {
-    icon: '1️⃣',
+    icon: '/hlpfl-symbol.svg',
     title: 'Discovery Call',
     description: 'Find out if we\'re a good fit for one another. No promises, we\'re not for everyone.'
   },
   {
-    icon: '2️⃣',
+    icon: '/globe.svg',
     title: 'Provide Materials',
     description: 'Share your content, images, branding, and any assets you have. Don\'t have everything? No worries.'
   },
   {
-    icon: '3️⃣',
+    icon: '/window.svg',
     title: 'We Build',
     description: 'Our team gets to work using development tools to create your custom website efficiently without cutting corners.'
   },
   {
-    icon: '4️⃣',
+    icon: '/hlpfl-logo-full.svg',
     title: 'Review & Launch',
     description: 'You review, we refine, and then we launch. Typically within 72 hours of receiving all materials. Then we celebrate your success!'
   }
@@ -69,7 +70,15 @@ export default function Process() {
               className={`value-card reveal ${isVisible ? 'active' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="value-icon text-5xl mb-4">{step.icon}</div>
+              <div className="value-icon mb-4">
+                   <Image 
+                     src={step.icon}
+                     alt={step.title}
+                     width={60}
+                     height={60}
+                     className="animate-pulse"
+                   />
+                 </div>
               <h3 className="text-2xl mb-4 text-primary">{step.title}</h3>
               <p className="text-text-muted leading-relaxed">{step.description}</p>
             </div>
