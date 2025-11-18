@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Process from '@/components/Process';
@@ -120,27 +121,67 @@ export default function Home() {
       <div className="trust-badges bg-dark-light py-8 border-t border-primary/20 border-b border-primary/20">
         <div className="trust-badges-container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon text-4xl mb-2">⚡</div>
+            <div className="trust-badge-icon mb-2">
+              <Image 
+                src="/hlpfl-symbol.svg"
+                alt="72-Hour Delivery"
+                width={40}
+                height={40}
+                className="animate-pulse"
+              />
+            </div>
             <h3 className="text-primary text-lg mb-1">72-Hour Delivery*</h3>
             <p className="text-text-muted text-sm">Efficient turnaround guaranteed</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon text-4xl mb-2">💰</div>
+            <div className="trust-badge-icon mb-2">
+              <Image 
+                src="/hlpfl-symbol.svg"
+                alt="Founder Friendly Pricing"
+                width={40}
+                height={40}
+                className="animate-bounce"
+              />
+            </div>
             <h3 className="text-primary text-lg mb-1">Founder Friendly Pricing</h3>
             <p className="text-text-muted text-sm">Sliding scale for your budget</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon text-4xl mb-2">🇺🇸</div>
+            <div className="trust-badge-icon mb-2">
+              <Image 
+                src="/hlpfl-symbol.svg"
+                alt="100% US-Based"
+                width={40}
+                height={40}
+                className="animate-pulse"
+              />
+            </div>
             <h3 className="text-primary text-lg mb-1">100% US-Based</h3>
             <p className="text-text-muted text-sm">No international outsourcing - ever</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon text-4xl mb-2">🤝</div>
+            <div className="trust-badge-icon mb-2">
+              <Image 
+                src="/hlpfl-symbol.svg"
+                alt="Full Transparency"
+                width={40}
+                height={40}
+                className="animate-spin"
+              />
+            </div>
             <h3 className="text-primary text-lg mb-1">Full Transparency</h3>
             <p className="text-text-muted text-sm">No hidden fees or surprises</p>
           </div>
           <div className="trust-badge flex flex-col items-center gap-2">
-            <div className="trust-badge-icon text-4xl mb-2">🚀</div>
+            <div className="trust-badge-icon mb-2">
+              <Image 
+                src="/hlpfl-symbol.svg"
+                alt="Real Partnership"
+                width={40}
+                height={40}
+                className="animate-bounce"
+              />
+            </div>
             <h3 className="text-primary text-lg mb-1">Real Partnership</h3>
             <p className="text-text-muted text-sm">We grow with your success</p>
           </div>
@@ -160,21 +201,45 @@ export default function Home() {
           </div>
           <div className="value-props grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="value-card reveal">
-              <div className="value-icon text-5xl mb-4">⚡</div>
+              <div className="value-icon mb-4">
+                <Image 
+                  src="/hlpfl-symbol.svg"
+                  alt="Lightning Fast Delivery"
+                  width={60}
+                  height={60}
+                  className="animate-pulse"
+                />
+              </div>
               <h3 className="text-2xl mb-4 text-primary">Lightning-Fast Delivery</h3>
               <p className="text-text-muted leading-relaxed">
                 Get your website live in 72 hours when you provide all materials. We use AI-powered development to deliver quality at speed without compromising on excellence.
               </p>
             </div>
             <div className="value-card reveal">
-              <div className="value-icon text-5xl mb-4">💰</div>
+              <div className="value-icon mb-4">
+                <Image 
+                  src="/hlpfl-symbol.svg"
+                  alt="Actually Affordable"
+                  width={60}
+                  height={60}
+                  className="animate-bounce"
+                />
+              </div>
               <h3 className="text-2xl mb-4 text-primary">Actually Affordable</h3>
               <p className="text-text-muted leading-relaxed">
                 Sliding scale pricing based on your budget. We believe every founder deserves a professional website, regardless of their current financial situation.
               </p>
             </div>
             <div className="value-card reveal">
-              <div className="value-icon text-5xl mb-4">🇺🇸</div>
+              <div className="value-icon mb-4">
+                <Image 
+                  src="/hlpfl-symbol.svg"
+                  alt="US-Based Work"
+                  width={60}
+                  height={60}
+                  className="animate-pulse"
+                />
+              </div>
               <h3 className="text-2xl mb-4 text-primary">100% US-Based Work</h3>
               <p className="text-text-muted leading-relaxed">
                 No outsourcing, no language barriers, no timezone issues. All work is done right here in Grand Rapids, MI by our dedicated team.

@@ -10,10 +10,11 @@ export default function Footer() {
           <div className="footer-brand flex flex-col">
             <div className="footer-logo mb-4">
               <Image 
-                src="/hlpfl-symbol.svg" 
-                alt="HLPFL" 
-                width={80}
-                height={80}
+                src="/hlpfl-logo-full.svg" 
+                alt="HLPFL - Web Development" 
+                width={160}
+                height={64}
+                className="hover:opacity-80 transition-opacity"
               />
             </div>
             <h3 className="text-primary mb-4 text-xl">HLPFL</h3>
