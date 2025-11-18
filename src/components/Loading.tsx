@@ -4,16 +4,34 @@ import { useEffect, useState } from 'react';
 import { useLoading } from '@/contexts/LoadingContext';
 import Image from 'next/image';
 
+// Deterministic arrays to prevent hydration mismatches
+const sparkleData = Array.from({ length: 50 }, (_, i) => ({
+  width: (i % 4) + 1,
+  height: ((i + 1) % 4) + 1,
+  left: ((i * 2) % 100),
+  top: ((i * 3) % 100),
+  blur: ((i % 6) + 5),
+  duration: ((i % 3) + 2),
+  delay: ((i % 3) + 0.5),
+}));
+
 export default function Loading() {
   const { isLoading, setLoading } = useLoading();
   const [progress, setProgress] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
-    if (!isLoading) return;
+    if (!isLoading || !mounted) return;
 
     const interval = setInterval(() => {
       setProgress(prev => {
-        const newProgress = prev + Math.random() * 15;
+        const increment = Math.random() * 15; // Safe here since it's client-side only
+        const newProgress = prev + increment;
         if (newProgress >= 100) {
           clearInterval(interval);
           setTimeout(() => {
@@ -26,26 +44,26 @@ export default function Loading() {
     }, 200);
 
     return () => clearInterval(interval);
-  }, [isLoading, setLoading]);
+  }, [isLoading, setLoading, mounted]);
 
-  if (!isLoading) return null;
+  if (!isLoading || !mounted) return null;
 
   return (
     <div className="loading-screen fixed inset-0 flex flex-col items-center justify-center z-[10000] bg-black">
       {/* Abundant Orange Sparkles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(200)].map((_, i) => (
+        {sparkleData.map((sparkle, i) => (
           <div
             key={`sparkle-${i}`}
             className="absolute rounded-full bg-orange-500 opacity-0"
             style={{
-              width: Math.random() * 4 + 1 + 'px',
-              height: Math.random() * 4 + 1 + 'px',
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%',
-              boxShadow: '0 0 ' + (Math.random() * 10 + 5) + 'px rgba(251, 146, 60, 0.8)',
-              animation: `orangeSparkle ${Math.random() * 3 + 2}s ease-in-out infinite`,
-              animationDelay: Math.random() * 3 + 's',
+              width: sparkle.width + 'px',
+              height: sparkle.height + 'px',
+              left: sparkle.left + '%',
+              top: sparkle.top + '%',
+              boxShadow: `0 0 ${sparkle.blur}px rgba(251, 146, 60, 0.8)`,
+              animation: `orangeSparkle ${sparkle.duration}s ease-in-out infinite`,
+              animationDelay: sparkle.delay + 's',
             }}
           />
         ))}
