@@ -1,20 +1,23 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLoading } from '@/contexts/LoadingContext';
 import Image from 'next/image';
 
 export default function Loading() {
+  const { isLoading, setLoading } = useLoading();
   const [progress, setProgress] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    if (!isLoading) return;
+
     const interval = setInterval(() => {
       setProgress(prev => {
         const newProgress = prev + Math.random() * 15;
         if (newProgress >= 100) {
           clearInterval(interval);
           setTimeout(() => {
-            setIsVisible(false);
+            setLoading(false);
           }, 800);
           return 100;
         }
@@ -23,9 +26,9 @@ export default function Loading() {
     }, 200);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isLoading, setLoading]);
 
-  if (!isVisible) return null;
+  if (!isLoading) return null;
 
   return (
     <div className="loading-screen fixed inset-0 flex flex-col items-center justify-center z-[10000] bg-black">
