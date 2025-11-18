@@ -31,10 +31,10 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="logo hover:animate-bounce">
           <Image 
-            src="/hlpfl-symbol.svg" 
-            alt="HLPFL" 
-            width={96}
-            height={96}
+            src="/hlpfl-logo-full.svg" 
+            alt="HLPFL - Web Development" 
+            width={180}
+            height={72}
             className="transition-transform duration-300 hover:scale-105"
           />
         </Link>

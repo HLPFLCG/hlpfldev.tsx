@@ -49,11 +49,15 @@ export default function Loading() {
       </div>
 
       <div className="relative z-2 flex flex-col items-center gap-8">
-        {/* Logo - Placeholder for now */}
+        {/* Logo */}
         <div className="loading-logo flex items-center justify-center">
-          <div className="w-32 h-32 bg-gradient-to-r from-primary to-primary-light rounded-full flex items-center justify-center text-white text-4xl font-bold">
-            HLPFL
-          </div>
+          <Image 
+            src="/hlpfl-logo-full.svg"
+            alt="HLPFL - Web Development"
+            width={200}
+            height={80}
+            className="animate-pulse hover:scale-105 transition-transform duration-300"
+          />
         </div>
 
         {/* Loading Bar */}
