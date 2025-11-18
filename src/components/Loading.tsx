@@ -36,17 +36,14 @@ export default function Loading() {
             key={i}
             className="absolute rounded-full opacity-60"
               style={{
-                ...style,
                 background: 'var(--primary)',
+                width: Math.random() * 6 + 2 + 'px',
+                height: Math.random() * 6 + 2 + 'px',
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%',
+                animation: `float ${Math.random() * 3 + 2}s linear infinite`,
+                animationDelay: Math.random() * 2 + 's',
               }}
-            style={{
-              width: Math.random() * 6 + 2 + 'px',
-              height: Math.random() * 6 + 2 + 'px',
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%',
-              animation: `float ${Math.random() * 3 + 2}s linear infinite`,
-              animationDelay: Math.random() * 2 + 's',
-            }}
           />
         ))}
       </div>
